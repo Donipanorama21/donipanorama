@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Absensi & Nilai — SMKS PGRI Cikampek</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="sticky-header">
+   <img src="logo-sekolah.png" alt="Logo Sekolah" class="logo">
+<h1>📘 Sistem Absensi & Rekap Nilai Siswa</h1>
+ </header>
+
+<main>
+
+<section id="inputSection" class="content-section fade-in">
+<form id="formAbsensi">
+<h2>🧾 Form Absensi Harian</h2>
+
+<div class="form-group">
+<label for="mapel">Mata Pelajaran</label>
+<select id="mapel" required>
+<option value="">-- Pilih Mata Pelajaran --</option>
+ <option value="Matematika">Matematika</option>
+ <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+<option value="Bahasa Inggris">Bahasa Inggris</option>
+ <option value="Teknik Mekanik Mesin Industri">Teknik Mekanik Mesin Industri</option>
+ </select>
+</div>
+
+<div class="form-group">
+<label for="guru">Nama Guru</label>
+<select id="guru" required>
+<option value="">-- Pilih Guru --</option>
+ <option value="Doni Panorama, S.Pd">Doni Panorama, S.Pd</option>
+<option value="Muhammad Ismail, S.Pd">Muhammad Ismail, S.Pd</option>
+ <option value="Purwarindah, ST">Purwarindah, ST</option>
+ <option value="Agus Sugiarto, ST">Agus Sugiarto, ST</option>
+</select>
+ </div>
+
+<div class="form-group">
+ <label for="kelas">Kelas</label>
+<select id="kelas" required>
+ <option value="">-- Pilih Kelas --</option>
+<option value="X TKR 1">X TKR 1</option>
+ <option value="X TKR 2">X TKR 2</option>
+ <option value="X TMI">X TMI</option>
+ <option value="X RPL">X RPL</option>
+ <option value="XI TKR 1">XI TKR 1</option>
+<option value="XI TKR 2">XI TKR 2</option>
+ <option value="XI RPL">XI RPL</option>
+ <option value="XII RPL">XII RPL</option>
+</select>
+</div>
+
+ <div class="form-group">
+<label for="tanggal">Tanggal</label>
+<input type="date" id="tanggal" required>
+</div>
+
+ <div id="daftarSiswa" class="hidden fade-in">
+ <table>
+ <thead>
+ <tr>
+<th>No</th>
+ <th>Nama Siswa</th>
+<th>Jenis Kelamin</th>
+<th>Kehadiran</th>
+ </tr>
+ </thead>
+ <tbody id="tabelBody">
+ <tr><td colspan="4" style="text-align:center;">Pilih kelas terlebih dahulu...</td></tr>
+</tbody>
+</table>
+ </div>
+
+ <button type="submit" class="btn-green">💾 Simpan Absensi</button>
+</form>
+ </section>
+
+ <!-- TOMBOL INPUT NILAI DAN REKAP DATA SISWA -->
+    <div class="toggle-container">
+      <button id="toggleNilaiBtn" class="btn-blue">🎓 Input Form Nilai</button>
+      <button id="toggleDataSiswaBtn" class="btn-primary">🔍 Data Siswa</button> 
+    </div>
+
+<section id="data-siswa-rekap" class="card fade-in hidden">
+<h2>🔎 Filter Data Siswa & Rekap</h2>
+<form id="formFilterRekap">
+ <div class="form-group">
+  <label for="filterNama">Nama Siswa</label>
+  <select id="filterNama" name="filterNama">
+    <option value="">Semua Siswa</option>
+    </select>
+</div>
+<div class="form-group">
+ <label for="filterKelas">Kelas</label>
+ <select id="filterKelas" name="filterKelas">
+<option value="">Semua Kelas</option>
+ <option value="X TKR 1">X TKR 1</option>
+ <option value="X TKR 2">X TKR 2</option>
+</select>
+ </div>
+<div class="form-group">
+<label for="filterMapel">Mata Pelajaran</label>
+<select id="filterMapel" name="filterMapel">
+<option value="">Semua Mapel</option>
+ <option value="Matematika">Matematika</option>
+ <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+ </select>
+ </div>
+ <div class="form-group">
+<label for="filterGuru">Nama Guru</label>
+<select id="filterGuru" name="filterGuru">
+<option value="">Semua Guru</option>
+ <option value="Doni Panorama, S.Pd">Doni Panorama, S.Pd</option>
+ </select>
+</div>
+<div class="form-group">
+<label for="filterBulan">Bulan</label>
+<select id="filterBulan" name="filterBulan">
+<option value="">Semua Bulan</option>
+</select>
+</div>
+<div class="form-group">
+<label for="filterSemester">Semester</label>
+<select id="filterSemester" name="filterSemester">
+<option value="">Semua Semester</option>
+</select>
+</div>
+<div class="form-group">
+  <label for="filterTahun">Tahun</label>
+  <select id="filterTahun" name="filterTahun">
+    <option value="">Semua Tahun</option>
+    </select>
+</div>
+
+ <button type="submit" class="btn-green">Tampilkan Data & Rekap</button>
+</form>
+</section>
+
+
+ <section id="rekap-nilai" class="card fade-in hidden">
+<h2>📊 Form Nilai Siswa</h2>
+<form id="nilaiForm">
+ <div class="form-group">
+<label for="kelasNilai">Kelas</label>
+<select id="kelasNilai" required>
+ <option value="">-- Pilih Kelas --</option>
+<option value="X TKR 1">X TKR 1</option>
+<option value="X TKR 2">X TKR 2</option>
+<option value="X TMI">X TMI</option> 
+ <option value="X RPL">X RPL</option> 
+ <option value="XI TKR 1">XI TKR 1</option>
+ <option value="XI TKR 2">XI TKR 2</option>
+ <option value="XI RPL">XI RPL</option>
+ <option value="XII RPL">XII RPL</option>
+</select>
+ </div>
+
+ <div class="form-group">
+<label for="namaSiswaNilai">Nama Siswa</label>
+ <select id="namaSiswaNilai" required>
+ <option value="">-- Pilih Kelas Terlebih Dahulu --</option>
+ </select>
+ </div>
+
+ <div class="form-group"><label for="nilaiUH">Ulangan Harian</label><input type="number" id="nilaiUH" min="0" max="100"></div>
+ <div class="form-group"><label for="nilaiTugas">Nilai Tugas</label><input type="number" id="nilaiTugas" min="0" max="100" required></div> <div class="form-group"><label for="nilaiUTS">Nilai UTS</label><input type="number" id="nilaiUTS" min="0" max="100" required></div>
+ <div class="form-group"><label for="nilaiUAS">Nilai UAS</label><input type="number" id="nilaiUAS" min="0" max="100" required></div>
+
+<button type="submit" class="btn-primary">💾 Simpan Nilai</button>
+</form>
+ </section>
+
+ <section id="rekapSection" class="content-section fade-in">
+ <h3>🗓️ Rekap Kehadiran & Nilai</h3>
+<div class="rekap-buttons">
+ <button id="rekapBulan">📅 1 Bulan</button>
+<button id="rekap3Bulan">🗓️ 3 Bulan</button>
+ <button id="rekap6Bulan">📘 6 Bulan</button>
+<button id="btnDownloadRekap" class="btn-blue">⬇️ Download Rekap Excel</button>
+</div>
+<div id="rekapContainer" class="rekap-container fade-in"></div>
+</section>
+
+<section id="detailSiswaContainer" class="card fade-in hidden">
+  </section>
+</main>
+
+<footer>© 2025 Absensi & Rekap Nilai Siswa — SMKS PGRI Cikampek</footer>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
