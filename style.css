@@ -1,0 +1,315 @@
+/* ========== RESET ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========== BODY & BACKGROUND (Disesuaikan) ========== */
+body {
+  /* Gantikan properti background yang lama dengan properti yang lebih menarik dari patokan Anda */
+  background: url('image/Abstrak\ 5.jpg') no-repeat center center fixed;
+  background-size: cover; 
+  background-attachment: fixed;
+  background-position: center;
+  
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 80px;
+}
+
+/* Tambahkan lapisan transparan agar teks tetap terbaca */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(50, 50, 50, 0.8); /* Opacity untuk kontras */
+  z-index: -1;
+}
+
+/* ========== HEADER (Disesuaikan) ========== */
+header {
+  position: sticky;
+  top: 0;
+  background: #767777; /* Warna abu-abu yang Anda gunakan */
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Pusatkan konten */
+  gap: 15px; /* Jarak antara logo dan judul */
+}
+
+header .logo {
+  height: 40px; /* Ukuran logo */
+}
+
+header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+/* ========== MAIN SECTION ========== */
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 1.5rem auto;
+}
+
+/* ========== FORM CARD (Disesuaikan) ========== */
+form, .card {
+  /* Menerapkan efek transparan pada form card */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+form:hover, .card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Judul di dalam form/card */
+h2 {
+  color: #555; /* Warna judul diubah agar terlihat di latar putih */
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid #bca37f; /* Garis pemisah yang menarik */
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  color: #fff; /* Warna judul diubah agar terlihat di latar putih */
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid #bca37f; /* Garis pemisah yang menarik */
+  padding-bottom: 0.5rem;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700; /* Ditebalkan */
+  color: #555;
+}
+
+select, input[type="number"], input[type="date"], input[type="text"] {
+  width: 100%;
+  padding: 0.8rem; /* Sedikit lebih besar */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+  background-color: #fcfcfc;
+}
+
+select:focus, input:focus {
+  border-color: #a0522d; /* Warna fokus coklat */
+  box-shadow: 0 0 5px rgba(160, 82, 45, 0.3);
+  outline: none;
+}
+
+/* ========== BUTTONS (Disesuaikan) ========== */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 5px;
+}
+
+/* Skema Warna Coklat/Abu-abu */
+.btn-green, .btn-primary {
+  background: #bca37f; /* Coklat Muda - tombol input*/
+  color: white;
+}
+
+.btn-green:hover, .btn-primary:hover {
+  background: #767777; /* Abu-abu Tua - tombol input absensi */
+}
+
+.btn-blue {
+  background: #bca37f; /* Abu-abu Tua - tombol input nilai */
+  color: white;
+}
+
+.btn-blue:hover {
+  background: #767777; /* Coklat Muda - tombol input nilai */
+}
+
+/* Tombol Tutup Rekap (BARU) */
+.btn-red {
+    background: #e74c3c;
+    color: white;
+}
+.btn-red:hover {
+    background: #c0392b;
+}
+
+.cancel {
+  background: #ccc;
+  color: #333;
+}
+
+.cancel:hover {
+  background: #bbb;
+}
+
+/* ========== TABLE (Disesuaikan) ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  overflow: hidden; /* Untuk membuat border radius tabel berfungsi */
+}
+
+th, td {
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+th {
+  background: #a0522d; /* Coklat Gelap */
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+tr:hover {
+  background: #f0f4f8;
+}
+
+/* Style khusus untuk tabel rekap */
+.rekap-table {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== TOGGLE BUTTON CONTAINER (BARU) ========== */
+.toggle-container {
+    text-align: center;
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.toggle-nilai-container {
+    text-align: center;
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* ========== REKAP BUTTONS (Disesuaikan) ========== */
+.rekap-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+.rekap-buttons button {
+    flex-grow: 1;
+    min-width: 100px;
+}
+#btnDownloadRekap {
+    background: #1f618d; /* Biru Gelap untuk download */
+}
+#btnDownloadRekap:hover {
+    background: #2980b9;
+}
+
+
+/* ========== MODAL / TOAST / UTILITY ========== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* TOAST NOTIFIKASI */
+.toast {
+  position: fixed;
+  bottom: 80px; /* Di atas footer */
+  right: 20px;
+  background: #a0522d;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #767777;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Pastikan Anda menghapus .toggle-nilai-container jika style-nya bertentangan */
+
+/* ========== TOGGLE BUTTON CONTAINER (Perbaikan) ========== */
+.toggle-container {
+    text-align: center;
+    margin: 1.5rem 0;
+    /* Properti Flexbox untuk membuat tombol sejajar */
+    display: flex; 
+    gap: 20px; /* Jarak antara tombol */
+    justify-content: center; /* Pusatkan horizontal */
+    flex-wrap: wrap; /* Tombol bisa bertumpuk jika layar kecil */
+}
